@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:10000"
+    environment:
+      - PORT=10000
+      - APP_NAME=MoveWell
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_KEY=base64:elX8yHrFBt2fi2uJKzH/td6IbcvIF13XtDvpdPGSL8k=
+      - APP_URL=http://localhost:8000
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/data/database.sqlite
+      - SESSION_DRIVER=database
+      - CACHE_STORE=database
+      - QUEUE_CONNECTION=sync
+      - LOG_CHANNEL=stderr
+    volumes:
+      - movewell-data:/data
+
+volumes:
+  movewell-data:

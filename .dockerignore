@@ -1,0 +1,17 @@
+node_modules/
+vendor/
+.env
+.git/
+.github/
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+movewell.sql
+database/database.sqlite
+public/build/
+public/storage
+public/hot
+tests/
+.phpunit.result.cache
+.claude/
