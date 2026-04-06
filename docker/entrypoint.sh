@@ -3,13 +3,21 @@ set -e
 
 echo "=== MoveWell Startup ==="
 
-# Create data directory if not exists
+# Create data directories
 mkdir -p /data/storage/app/public
+
+# Generate APP_KEY if not set or empty
+if [ -z "$APP_KEY" ]; then
+    echo "APP_KEY not set, generating..."
+    export APP_KEY=$(php artisan key:generate --show)
+    echo "Generated APP_KEY: $APP_KEY"
+fi
 
 # Create SQLite database if not exists
 if [ ! -f /data/database.sqlite ]; then
     echo "Creating fresh SQLite database..."
     touch /data/database.sqlite
+    chmod 664 /data/database.sqlite
 
     # Import SQLite data from converted SQL dump
     if [ -f /var/www/html/database/movewell_sqlite.sql ]; then
@@ -29,10 +37,8 @@ else
 fi
 
 # Link persistent storage for uploads
-if [ -d /data/storage/app/public ]; then
-    rm -rf /var/www/html/storage/app/public
-    ln -sf /data/storage/app/public /var/www/html/storage/app/public
-fi
+rm -rf /var/www/html/storage/app/public
+ln -sf /data/storage/app/public /var/www/html/storage/app/public
 
 # Create storage symlink (public/storage -> storage/app/public)
 php artisan storage:link --force 2>/dev/null || true
@@ -47,6 +53,7 @@ fi
 
 # Fix permissions
 chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /data
+chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /data
 
 # Update Apache port to match $PORT
 sed -i "s/\${PORT}/$PORT/g" /etc/apache2/ports.conf

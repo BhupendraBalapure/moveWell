@@ -69,14 +69,15 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Create necessary directories
 RUN mkdir -p storage/logs \
-    storage/framework/cache \
+    storage/framework/cache/data \
     storage/framework/sessions \
     storage/framework/views \
+    storage/framework/testing \
     bootstrap/cache \
-    /data
+    /data/storage/app/public
 
 # Set permissions
-RUN chown -R www-data:www-data /var/www/html \
+RUN chown -R www-data:www-data /var/www/html /data \
     && chmod -R 775 storage bootstrap/cache /data
 
 # Copy and set entrypoint
