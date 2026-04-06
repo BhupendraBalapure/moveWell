@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/about)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/contact)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/services/knee/acl-injury)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/services/shoulder/rotator-cuff-injury)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/blogs)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/gallery)",
+      "Bash(php artisan:*)",
+      "Bash(composer require:*)",
+      "Bash(chmod -R 777 bootstrap/cache)",
+      "Bash(python -c ':*)",
+      "Bash(where php:*)",
+      "Bash(php -r ':*)",
+      "Bash(C:\\\\xampp\\\\php\\\\php.exe:*)",
+      "Bash(/c/xampp/php/php.exe:*)",
+      "Bash(php -m)",
+      "Bash(npm list:*)",
+      "Bash(npx --version)",
+      "Bash(node -e ':*)",
+      "Bash(npx mammoth:*)",
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(php:*)",
+      "Bash(ls -d \"C:/Users/ASUS/OneDrive/Documents/harshal/MoveWell/public/assets/images/services/M\"*)",
+      "Bash(ls -d \"C:/Users/ASUS/OneDrive/Documents/harshal/MoveWell/public/assets/images/services/m\"*)",
+      "WebSearch",
+      "Bash(mkdir:*)",
+      "Bash(cp aclinjury/* knee/acl-injury/)",
+      "Bash(cp meniscus/* knee/meniscus/)",
+      "Bash(cp pcl/* knee/pcl/)",
+      "Bash(C:/xampp/php/php.exe:*)",
+      "Bash(\"C:/xampp/php/php.exe\" -m)",
+      "Bash(\"C:/xampp/php/php.exe\" artisan:*)"
+    ]
+  }
+}
