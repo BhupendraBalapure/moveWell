@@ -11,11 +11,16 @@ if [ ! -f /data/database.sqlite ]; then
     echo "Creating fresh SQLite database..."
     touch /data/database.sqlite
 
-    # Run migrations
-    php artisan migrate --force
-
-    # Seed admin user and data
-    php artisan db:seed --force
+    # Import SQLite data from converted SQL dump
+    if [ -f /var/www/html/database/movewell_sqlite.sql ]; then
+        echo "Importing data from movewell_sqlite.sql..."
+        sqlite3 /data/database.sqlite < /var/www/html/database/movewell_sqlite.sql
+        echo "Data imported successfully."
+    else
+        # Fallback: run migrations and seed
+        php artisan migrate --force
+        php artisan db:seed --force
+    fi
 
     echo "Database created and seeded."
 else
