@@ -50,6 +50,26 @@ document.querySelectorAll('.mega-col h4').forEach(item => {
     });
 });
 
+// Mobile nav-dropdown toggle
+document.querySelectorAll('.nav-dropdown > a').forEach(item => {
+    item.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        }
+    });
+});
+
+// Mobile nav-sub-dropdown toggle
+document.querySelectorAll('.nav-sub-dropdown > a').forEach(item => {
+    item.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        }
+    });
+});
+
 // ===== STICKY HEADER =====
 const header = document.querySelector('.header');
 window.addEventListener('scroll', () => {
@@ -152,7 +172,7 @@ if (contactForm) {
 
         // Create WhatsApp message
         const whatsappMsg = `Hello Dr. Sahil, I'm ${name}. ${message}. My contact: ${phone}`;
-        const whatsappUrl = `https://wa.me/919999999999?text=${encodeURIComponent(whatsappMsg)}`;
+        const whatsappUrl = `https://wa.me/917892113380?text=${encodeURIComponent(whatsappMsg)}`;
         window.open(whatsappUrl, '_blank');
 
         this.reset();

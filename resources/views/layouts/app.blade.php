@@ -17,13 +17,11 @@
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
-                <a href="mailto:movewell.ortho@gmail.com"><i class="fas fa-envelope"></i> movewell.ortho@gmail.com</a>
-                <a href="tel:+919999999999"><i class="fas fa-phone"></i> +91 99999 99999</a>
+                <a href="https://maps.google.com/?q=Movewell+Orthopedics+Dhantoli+Nagpur" target="_blank"><i class="fas fa-map-marker-alt"></i> 108, Behind Neuron Hospital, West Park Road, Dhantoli, Nagpur-440012</a>
             </div>
             <div class="top-bar-right">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:sahillala7@gmail.com"><i class="fas fa-envelope"></i> sahillala7@gmail.com</a>
+                <a href="tel:+917892113380"><i class="fas fa-phone"></i> +91 78921 13380</a>
             </div>
         </div>
     </div>
@@ -36,7 +34,8 @@
                 <div class="logo-text">
                     Dr. Sahil Lala
                     <span>MS Orthopaedics</span>
-                    <span>Arthroscopy | Sports Injury | Knee & Shoulder Surgeon</span>
+                    <span>Arthroscopy | Sports Injury</span>
+                    <span>Knee & Shoulder Surgeon</span>
                 </div>
             </a>
 
@@ -44,32 +43,30 @@
                 <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
                 <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a>
 
-                <!-- Treatments Mega Menu -->
-                <div class="mega-dropdown">
-                    <a href="#">Treatments</a>
-                    <div class="mega-menu">
-                        <div class="mega-menu-inner">
-                            @php
-                                $categoryLabels = [
-                                    'knee' => ['label' => 'Knee', 'icon' => 'fa-bone'],
-                                    'shoulder' => ['label' => 'Shoulder', 'icon' => 'fa-hand-fist'],
-                                    'hip' => ['label' => 'Hip', 'icon' => 'fa-person-walking'],
-                                    'elbow' => ['label' => 'Elbow', 'icon' => 'fa-hand'],
-                                    'ankle' => ['label' => 'Ankle', 'icon' => 'fa-shoe-prints'],
-                                    'wrist' => ['label' => 'Wrist', 'icon' => 'fa-hand'],
-                                ];
-                            @endphp
-                            @foreach($categoryLabels as $catKey => $catInfo)
-                                <div class="mega-col">
-                                    <h4><i class="fas {{ $catInfo['icon'] }}"></i> {{ $catInfo['label'] }}</h4>
-                                    <ul>
-                                        @foreach(collect(config('services_data'))->where('category', $catKey) as $s)
-                                            <li><a href="{{ route('service.detail', ['category' => $catKey, 'slug' => $s['slug']]) }}">{{ $s['title'] }}</a></li>
-                                        @endforeach
-                                    </ul>
+                <!-- Treatments Dropdown -->
+                @php
+                    $categoryLabels = [
+                        'knee' => ['label' => 'Knee', 'icon' => 'fa-bone'],
+                        'shoulder' => ['label' => 'Shoulder', 'icon' => 'fa-hand-fist'],
+                        'hip' => ['label' => 'Hip', 'icon' => 'fa-person-walking'],
+                        'elbow' => ['label' => 'Elbow', 'icon' => 'fa-hand'],
+                        'ankle' => ['label' => 'Ankle', 'icon' => 'fa-shoe-prints'],
+                        'wrist' => ['label' => 'Wrist', 'icon' => 'fa-hand'],
+                    ];
+                @endphp
+                <div class="nav-dropdown">
+                    <a href="#" class="{{ request()->routeIs('treatments.category') || request()->routeIs('service.detail') ? 'active' : '' }}">Treatments</a>
+                    <div class="nav-dropdown-menu">
+                        @foreach($categoryLabels as $catKey => $catInfo)
+                            <div class="nav-sub-dropdown">
+                                <a href="{{ route('treatments.category', $catKey) }}"><i class="fas {{ $catInfo['icon'] }}"></i> {{ $catInfo['label'] }} <i class="fas fa-chevron-right sub-arrow"></i></a>
+                                <div class="nav-sub-menu">
+                                    @foreach(collect(config('services_data'))->where('category', $catKey) as $s)
+                                        <a href="{{ route('service.detail', ['category' => $catKey, 'slug' => $s['slug']]) }}">{{ $s['title'] }}</a>
+                                    @endforeach
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -85,8 +82,8 @@
             </nav>
 
             <div class="header-cta">
-                <a href="https://wa.me/919999999999" target="_blank" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                <a href="https://wa.me/917892113380?text=Hello%20Dr.%20Sahil%2C%20I%20would%20like%20to%20share%20my%20MRI%2FX-Ray%20reports." target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp your MRI and X-Ray
                 </a>
                 <div class="menu-toggle">
                     <span></span>
@@ -107,7 +104,7 @@
         <div class="container">
             <h2>Send Your MRI / X-Ray Report on WhatsApp</h2>
             <p>Get expert opinion from Dr. Sahil Lala. Click below to share your reports instantly.</p>
-            <a href="https://wa.me/919999999999?text=Hello%20Dr.%20Sahil%2C%20I%20would%20like%20to%20share%20my%20reports." target="_blank" class="btn">
+            <a href="https://wa.me/917892113380?text=Hello%20Dr.%20Sahil%2C%20I%20would%20like%20to%20share%20my%20reports." target="_blank" class="btn">
                 <i class="fab fa-whatsapp"></i> Send on WhatsApp
             </a>
         </div>
@@ -157,19 +154,19 @@
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>MoveWell Orthopaedics Clinic, Nagpur, Maharashtra, India</span>
+                            <span>Movewell Orthopedics, 108, Behind Neuron Hospital, West Park Road, Dhantoli, Nagpur-440012</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span><a href="tel:+919999999999">+91 99999 99999</a></span>
+                            <span><a href="tel:+917892113380">+91 78921 13380</a></span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span><a href="mailto:movewell.ortho@gmail.com">movewell.ortho@gmail.com</a></span>
+                            <span><a href="mailto:sahillala7@gmail.com">sahillala7@gmail.com</a></span>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <span>Mon - Sat: 10:00 AM - 8:00 PM</span>
+                            <span>Mon - Sat: 10:00 AM - 9:00 PM</span>
                         </li>
                     </ul>
                 </div>
@@ -183,7 +180,7 @@
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/917892113380" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

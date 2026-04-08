@@ -5,17 +5,15 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="hero" style="background:linear-gradient(rgba(13,59,66,0.82),rgba(13,59,66,0.88)),url('{{ asset('assets/images/bg.jpg') }}') center/cover no-repeat;">
+<div class="social-sticky">
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+</div>
+
+<section class="hero" style="background:url('{{ asset('assets/images/herobg.png') }}') right center/cover no-repeat;">
     <div class="container">
-        <div class="hero-content">
-            <h1>Advanced <span>Orthopaedic</span><br>Care & <span>Treatment</span></h1>
-            <p>Dr. Sahil Lala — Fellowship-trained Orthopaedic Surgeon specializing in Arthroscopy, Sports Injury, Knee & Shoulder Surgery. Precision-driven care for optimal recovery.</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/919999999999" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Consult
-                </a>
-            </div>
-        </div>
         <div class="hero-form">
             <div class="hero-form-card">
                 <h3><i class="fas fa-calendar-check"></i> Book Appointment</h3>
@@ -61,6 +59,64 @@
                 </form>
             </div>
         </div>
+        <div class="hero-content">
+            <h1>Advanced<br><span>Orthopaedic</span><br>Care & <span>Treatment</span></h1>
+            <p>Dr. Sahil Lala — Fellowship-trained Orthopaedic Surgeon specializing in Arthroscopy, Sports Injury, Knee & Shoulder Surgery. Precision-driven care for optimal recovery.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/917892113380" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Consult
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mobile Appointment Form -->
+<section class="mobile-form-section">
+    <div class="container">
+        <div class="hero-form-card">
+            <h3><i class="fas fa-calendar-check"></i> Book Appointment</h3>
+            <p>Fill in your details and we'll get back to you shortly</p>
+            <form id="mobileAppointmentForm" action="{{ route('appointment.store') }}" method="POST">
+                @csrf
+                <div class="hero-form-group">
+                    <input type="text" name="name" placeholder="Full Name *" required>
+                </div>
+                <div class="hero-form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number *" required>
+                </div>
+                <div class="hero-form-row">
+                    <div class="hero-form-group">
+                        <input type="date" name="preferred_date" min="{{ date('Y-m-d') }}">
+                    </div>
+                    <div class="hero-form-group">
+                        <select name="preferred_time">
+                            <option value="">Select Time</option>
+                            <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+                            <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM</option>
+                            <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM</option>
+                            <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+                            <option value="06:00 PM - 08:00 PM">06:00 PM - 08:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="hero-form-group">
+                    <select name="service">
+                        <option value="">Select Service</option>
+                        <option value="Knee Surgery">Knee Surgery</option>
+                        <option value="Shoulder Surgery">Shoulder Surgery</option>
+                        <option value="Hip Surgery">Hip Surgery</option>
+                        <option value="Elbow Treatment">Elbow Treatment</option>
+                        <option value="Ankle Treatment">Ankle Treatment</option>
+                        <option value="Wrist Treatment">Wrist Treatment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="hero-form-btn">
+                    <i class="fas fa-paper-plane"></i> Book Now
+                </button>
+            </form>
+        </div>
     </div>
 </section>
 
@@ -72,14 +128,9 @@
                 <div style="width:100%;height:500px;background:linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;font-weight:700;">
                     <div style="text-align:center;">
                         <i class="fas fa-user-doctor" style="font-size:5rem;margin-bottom:20px;display:block;"></i>
-                        Dr. Sahil Lala<br>
-                        <span style="font-size:1rem;font-weight:400;">MS Orthopaedics</span>
+                        Dr. Sahil Lala
                     </div>
                 </div>
-            </div>
-            <div class="about-experience-badge">
-                <div class="number">MS</div>
-                <div class="text">Orthopaedics</div>
             </div>
         </div>
         <div class="about-content">
@@ -87,7 +138,7 @@
                 <h2>About Dr. Sahil Lala</h2>
                 <p>Arthroscopy, Sports Injury, Knee & Shoulder Surgeon</p>
             </div>
-            <p>Dr. Sahil is a fellowship-trained orthopaedic surgeon known for precision-driven arthroscopic and shoulder surgery. With a strong academic foundation and advanced surgical training, he specializes in restoring joint stability, function, and performance.</p>
+            <p>Dr. Sahil is a fellowship-trained orthopaedic surgeon known for precision-driven arthroscopic Knee and Shoulder surgeries. With a strong academic foundation and advanced surgical training, he specializes in restoring joint stability, function, and performance.</p>
             <p>He completed his MS in Orthopaedics from the prestigious Jawaharlal Nehru Medical College, Belgaum. He subsequently pursued Fellowship Training in Arthroscopy, Sports Injury & Joint Preservation in Mumbai, followed by a dedicated Fellowship in Advanced Shoulder Surgery.</p>
 
             <ul class="about-specialties">
@@ -146,7 +197,7 @@
     <div class="container">
         <h2>Send Your MRI / X-Ray Report on WhatsApp</h2>
         <p>Get expert opinion from Dr. Sahil Lala. Click below to share your reports instantly.</p>
-        <a href="https://wa.me/919999999999?text=Hello%20Dr.%20Sahil%2C%20I%20would%20like%20to%20share%20my%20reports." target="_blank" class="btn">
+        <a href="https://wa.me/917892113380?text=Hello%20Dr.%20Sahil%2C%20I%20would%20like%20to%20share%20my%20reports." target="_blank" class="btn">
             <i class="fab fa-whatsapp"></i> Send on WhatsApp
         </a>
     </div>
@@ -161,26 +212,36 @@
         </div>
         @php
             $mainSlugs = [
-                'acl-injury', 'meniscus-injury', 'knee-replacement',
-                'rotator-cuff-injury', 'shoulder-instability', 'reverse-shoulder-replacement',
-                'hip-arthroscopy', 'hip-replacement',
-                'tennis-elbow', 'ankle-ligament-injuries',
-                'carpal-tunnel-syndrome', 'achilles-tendon-injury',
+                'acl-injury', 'knee-replacement',
+                'rotator-cuff-injury', 'shoulder-instability',
+                'hip-replacement', 'ankle-ligament-injuries',
             ];
             $mainServices = collect(config('services_data'))->whereIn('slug', $mainSlugs);
         @endphp
+        @php
+            $treatmentImages = [
+                'acl-injury' => 'treatments/acl.avif',
+                'knee-replacement' => 'treatments/kneereplcaement.avif',
+                'rotator-cuff-injury' => 'treatments/rotatorcuff.jpg',
+                'shoulder-instability' => 'treatments/shouldeInstability.jpg',
+                'hip-replacement' => 'treatments/hipreplacement.avif',
+                'ankle-ligament-injuries' => 'treatments/ankleligament.avif',
+            ];
+        @endphp
         <div class="services-grid">
             @foreach($mainServices as $service)
-                <div class="service-card stagger-child">
-                    <div class="service-icon">
-                        <i class="fas {{ $service['icon'] }}"></i>
+                <a href="{{ route('service.detail', ['category' => $service['category'], 'slug' => $service['slug']]) }}" class="service-card img-card stagger-child" style="text-decoration:none;color:inherit;">
+                    <div class="service-card-img">
+                        <img src="{{ asset('assets/images/' . ($treatmentImages[$service['slug']] ?? 'category/knee.avif')) }}" alt="{{ $service['title'] }}">
                     </div>
-                    <h3>{{ $service['title'] }}</h3>
-                    <p>{{ $service['short_desc'] }}</p>
-                    <a href="{{ route('service.detail', ['category' => $service['category'], 'slug' => $service['slug']]) }}" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+                    <div class="service-card-body">
+                        <h3>{{ $service['title'] }}</h3>
+                        <p>{{ $service['short_desc'] }}</p>
+                        <span class="learn-more">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
             @endforeach
         </div>
     </div>

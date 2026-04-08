@@ -22,14 +22,9 @@
                 <div style="width:100%;height:500px;background:linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;font-weight:700;">
                     <div style="text-align:center;">
                         <i class="fas fa-user-doctor" style="font-size:5rem;margin-bottom:20px;display:block;"></i>
-                        Dr. Sahil Lala<br>
-                        <span style="font-size:1rem;font-weight:400;">MS Orthopaedics</span>
+                        Dr. Sahil Lala
                     </div>
                 </div>
-            </div>
-            <div class="about-experience-badge">
-                <div class="number">MS</div>
-                <div class="text">Orthopaedics</div>
             </div>
         </div>
         <div class="about-content">
@@ -37,7 +32,7 @@
                 <h2>Dr. Sahil Lala</h2>
                 <p>MS Orthopaedics | Arthroscopy, Sports Injury, Knee & Shoulder Surgeon</p>
             </div>
-            <p>Dr. Sahil is a fellowship-trained orthopaedic surgeon known for precision-driven arthroscopic and shoulder surgery. With a strong academic foundation and advanced surgical training, he specializes in restoring joint stability, function, and performance.</p>
+            <p>Dr. Sahil is a fellowship-trained orthopaedic surgeon known for precision-driven arthroscopic Knee and Shoulder surgeries. With a strong academic foundation and advanced surgical training, he specializes in restoring joint stability, function, and performance.</p>
             <p>He completed his MS in Orthopaedics from the prestigious <strong>Jawaharlal Nehru Medical College, Belgaum</strong>, one of the country's respected medical institutions, where he developed expertise in trauma management and complex joint disorders.</p>
             <p>He subsequently pursued <strong>Fellowship Training in Arthroscopy, Sports Injury & Joint Preservation (Knee Surgery)</strong> in Mumbai, followed by a dedicated <strong>Fellowship in Advanced Shoulder Surgery</strong>.</p>
 
@@ -51,7 +46,7 @@
                 <li><i class="fas fa-check-circle"></i> Minimally Invasive Arthroscopic Procedures</li>
             </ul>
 
-            <p style="margin-top:25px;">Dr. Sahil believes that successful orthopaedic care extends beyond surgery. His treatment philosophy integrates precision techniques, structured rehabilitation protocols, and individualized recovery plans to ensure optimal functional outcomes and long-term joint health.</p>
+            <p style="margin-top:25px;">Dr. Sahil believes that successful orthopaedic care extends beyond surgery. His treatment philosophy integrates precision techniques, structured rehabilitation protocols, and individualized recovery plans to ensure optimal functional outcomes and long-term joint health. At Movewell Orthopaedics, he leads with a clear commitment.</p>
 
             <p class="about-tagline">"Restoring Strength. Renewing Motion."</p>
 

@@ -29,35 +29,35 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Clinic Address</h4>
-                            <p>MoveWell Orthopaedics Clinic,<br>Nagpur, Maharashtra, India</p>
+                            <p>Movewell Orthopedics, 108, Behind Neuron Hospital,<br>West Park Road, Dhantoli, Nagpur-440012</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone</h4>
-                            <a href="tel:+919999999999">+91 99999 99999</a>
+                            <a href="tel:+917892113380">+91 78921 13380</a>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <a href="mailto:movewell.ortho@gmail.com">movewell.ortho@gmail.com</a>
+                            <a href="mailto:sahillala7@gmail.com">sahillala7@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-clock"></i>
                         <div>
                             <h4>Working Hours</h4>
-                            <p>Monday - Saturday: 10:00 AM - 8:00 PM<br>Sunday: By Appointment Only</p>
+                            <p>Monday - Saturday: 10:00 AM - 9:00 PM<br>Sunday: By Appointment Only</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <i class="fab fa-whatsapp"></i>
                         <div>
                             <h4>WhatsApp</h4>
-                            <a href="https://wa.me/919999999999" target="_blank">Send message or share reports</a>
+                            <a href="https://wa.me/917892113380" target="_blank">Send message or share reports</a>
                         </div>
                     </div>
                 </div>

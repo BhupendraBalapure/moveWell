@@ -113,7 +113,7 @@
                     <a href="{{ route('contact') }}" class="btn btn-primary">
                         <i class="fas fa-calendar-check"></i> Book Appointment
                     </a>
-                    <a href="https://wa.me/919999999999?text=Hello%20Dr.%20Sahil%2C%20I%20need%20consultation%20for%20{{ urlencode($service['title']) }}" target="_blank" class="btn-whatsapp">
+                    <a href="https://wa.me/917892113380?text=Hello%20Dr.%20Sahil%2C%20I%20need%20consultation%20for%20{{ urlencode($service['title']) }}" target="_blank" class="btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> WhatsApp Consult
                     </a>
                 </div>
