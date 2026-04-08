@@ -7,7 +7,7 @@
 <!-- Hero Section -->
 <div class="social-sticky">
     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+    <a href="https://www.instagram.com/movewellortho" aria-label="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
     <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
 </div>
