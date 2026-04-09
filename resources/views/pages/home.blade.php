@@ -12,7 +12,7 @@
     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
 </div>
 
-<section class="hero" style="background:url('{{ asset('assets/images/new.png') }}') right center/cover no-repeat;">
+<section class="hero" style="background:url('{{ asset('assets/images/new2.png') }}') right center/cover no-repeat;">
     <div class="container">
         <div class="hero-form">
             <div class="hero-form-card">
