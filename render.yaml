@@ -3,6 +3,7 @@ services:
     name: movewell
     runtime: docker
     dockerfilePath: ./Dockerfile
+    healthCheckPath: /
     envVars:
       - key: APP_NAME
         value: MoveWell

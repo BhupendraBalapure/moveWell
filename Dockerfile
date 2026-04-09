@@ -20,6 +20,7 @@ FROM php:8.4-apache
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
+    dumb-init \
     git \
     curl \
     libpng-dev \
@@ -89,4 +90,4 @@ ENV PORT=10000
 
 EXPOSE ${PORT}
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["dumb-init", "--rewrite", "28:0", "--", "entrypoint.sh"]
