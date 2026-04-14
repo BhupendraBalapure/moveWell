@@ -51,6 +51,13 @@
                     </button>
                 </form>
             </div>
+            <div class="hero-form-socials">
+                <a href="https://wa.me/917892113380" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/movewellortho" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
         <div class="hero-content">
             <h1>Advanced<br><span>Orthopaedic</span><br>Care & <span>Treatment</span></h1>
@@ -109,6 +116,13 @@
                     <i class="fas fa-paper-plane"></i> Book Now
                 </button>
             </form>
+        </div>
+        <div class="hero-form-socials hero-form-socials--mobile">
+            <a href="https://wa.me/917892113380" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/movewellortho" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </div>
 </section>

@@ -82,11 +82,14 @@ window.addEventListener('scroll', () => {
 
 // ===== BACK TO TOP =====
 const backToTop = document.querySelector('.back-to-top');
+const whatsappFloat = document.querySelector('.whatsapp-float');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 500) {
         backToTop.classList.add('visible');
+        if (whatsappFloat) whatsappFloat.classList.add('visible');
     } else {
         backToTop.classList.remove('visible');
+        if (whatsappFloat) whatsappFloat.classList.remove('visible');
     }
 });
 

@@ -275,7 +275,7 @@ h4 {
     gap: 10px;
     flex-shrink: 0;
     white-space: nowrap;
-    margin-left: -30px;
+    margin-left: -40px;
 }
 
 @media (max-width: 992px) {
@@ -689,7 +689,8 @@ h4 {
     position: relative;
     min-height: 90vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 80px;
     background: linear-gradient(
         135deg,
         var(--secondary) 0%,
@@ -1971,6 +1972,64 @@ h4 {
     font-size: 0.9rem;
 }
 
+/* ===== HERO FORM SOCIALS ===== */
+.hero-form-socials {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 16px auto 0;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.hero-form-socials--mobile {
+    background: linear-gradient(135deg, rgba(13, 59, 66, 0.82), rgba(20, 90, 100, 0.75));
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 30px rgba(13, 59, 66, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    margin-top: 18px;
+}
+
+.hero-form-socials--mobile a {
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-form-socials--mobile a:nth-child(1) {
+    display: none;
+}
+
+.hero-form-socials a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-form-socials a:nth-child(1) { background: #25d366; }
+.hero-form-socials a:nth-child(2) { background: #1877f2; }
+.hero-form-socials a:nth-child(3) { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.hero-form-socials a:nth-child(4) { background: #ff0000; }
+.hero-form-socials a:nth-child(5) { background: #0a66c2; }
+
+.hero-form-socials a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+
 /* ===== FLOATING WHATSAPP ===== */
 .whatsapp-float {
     position: fixed;
@@ -1981,6 +2040,9 @@ h4 {
     background: var(--accent);
     border-radius: 50%;
     display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     align-items: center;
     justify-content: center;
     color: var(--white);
@@ -1989,6 +2051,12 @@ h4 {
     z-index: 999;
     transition: var(--transition);
     animation: pulse 2s infinite;
+}
+
+.whatsapp-float.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .whatsapp-float:hover {
@@ -2287,6 +2355,7 @@ h4 {
     .hero {
         min-height: 45vh;
         padding: 15px 0;
+        align-items: center;
     }
 
     .hero::before {
