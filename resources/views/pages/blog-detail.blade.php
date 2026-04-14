@@ -27,7 +27,7 @@
             </div>
 
             <div class="blog-content" style="font-size: 1.05rem; line-height: 1.9; color: var(--text-body);">
-                {!! nl2br(e($blog->content)) !!}
+                {!! $blog->content !!}
             </div>
 
             <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border);">

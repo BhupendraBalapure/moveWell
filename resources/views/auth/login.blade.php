@@ -84,12 +84,13 @@
             color: #4a5568; margin-bottom: 8px; letter-spacing: 0.2px;
         }
         .input-wrap { position: relative; }
-        .input-wrap i {
+        .input-wrap > i {
             position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
             color: #94a3b8; font-size: 0.9rem; transition: color 0.2s;
+            pointer-events: none;
         }
         .input-wrap input {
-            width: 100%; padding: 13px 16px 13px 46px;
+            width: 100%; padding: 13px 46px 13px 46px;
             border: 1.5px solid #e2e8f0; border-radius: 10px;
             font-family: 'Inter', sans-serif; font-size: 0.95rem;
             transition: all 0.2s; background: #f6fafb;
@@ -99,8 +100,14 @@
             box-shadow: 0 0 0 3px rgba(26,110,122,0.12);
             background: #fff;
         }
-        .input-wrap input:focus + i,
         .input-wrap input:focus ~ i { color: #1a6e7a; }
+        .password-toggle {
+            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+            background: none; border: none; color: #94a3b8; cursor: pointer;
+            padding: 6px; display: flex; align-items: center; justify-content: center;
+            font-size: 0.95rem;
+        }
+        .password-toggle:hover { color: #1a6e7a; }
 
         .form-options {
             display: flex; justify-content: space-between; align-items: center;
@@ -196,7 +203,7 @@
                 <div class="input-wrap">
                     <input type="password" name="password" placeholder="Enter your password" required id="passwordInput">
                     <i class="fas fa-lock"></i>
-                    <button type="button" onclick="togglePassword()" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:#94a3b8;cursor:pointer;padding:4px;">
+                    <button type="button" class="password-toggle" onclick="togglePassword()">
                         <i class="fas fa-eye" id="eyeIcon"></i>
                     </button>
                 </div>

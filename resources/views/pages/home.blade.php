@@ -5,13 +5,6 @@
 @section('content')
 
 <!-- Hero Section -->
-<div class="social-sticky">
-    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-    <a href="https://www.instagram.com/movewellortho" aria-label="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
-    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
-    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
-</div>
-
 <section class="hero" style="background:url('{{ asset('assets/images/new2.png') }}') right center/cover no-repeat;">
     <div class="container">
         <div class="hero-form">
@@ -221,10 +214,10 @@
         @php
             $treatmentImages = [
                 'acl-injury' => 'treatments/acl.avif',
-                'knee-replacement' => 'treatments/kneereplcaement.avif',
+                'knee-replacement' => 'treatments/kneereplcaement.jpg',
                 'rotator-cuff-injury' => 'treatments/rotatorcuff.jpg',
                 'shoulder-instability' => 'treatments/shouldeInstability.jpg',
-                'hip-replacement' => 'treatments/hipreplacement.avif',
+                'hip-replacement' => 'treatments/hipreplacement.jpg',
                 'ankle-ligament-injuries' => 'treatments/ankleligament.avif',
             ];
         @endphp

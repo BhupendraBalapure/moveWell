@@ -46,12 +46,12 @@
                 <!-- Treatments Dropdown -->
                 @php
                     $categoryLabels = [
-                        'knee' => ['label' => 'Knee', 'icon' => 'fa-bone'],
-                        'shoulder' => ['label' => 'Shoulder', 'icon' => 'fa-hand-fist'],
-                        'hip' => ['label' => 'Hip', 'icon' => 'fa-person-walking'],
-                        'elbow' => ['label' => 'Elbow', 'icon' => 'fa-hand'],
-                        'ankle' => ['label' => 'Ankle', 'icon' => 'fa-shoe-prints'],
-                        'wrist' => ['label' => 'Wrist', 'icon' => 'fa-hand'],
+                        'knee' => ['label' => 'Knee', 'img' => 'knee.png'],
+                        'shoulder' => ['label' => 'Shoulder', 'img' => 'shoulder.png'],
+                        'hip' => ['label' => 'Hip', 'img' => 'hip.png'],
+                        'elbow' => ['label' => 'Elbow', 'img' => 'elbow.jpg'],
+                        'ankle' => ['label' => 'Ankle', 'img' => 'ankle.jpg'],
+                        'wrist' => ['label' => 'Wrist', 'img' => 'wrist.png'],
                     ];
                 @endphp
                 <div class="nav-dropdown">
@@ -59,7 +59,7 @@
                     <div class="nav-dropdown-menu">
                         @foreach($categoryLabels as $catKey => $catInfo)
                             <div class="nav-sub-dropdown">
-                                <a href="{{ route('treatments.category', $catKey) }}"><i class="fas {{ $catInfo['icon'] }}"></i> {{ $catInfo['label'] }} <i class="fas fa-chevron-right sub-arrow"></i></a>
+                                <a href="{{ route('treatments.category', $catKey) }}">@if($catInfo['img'])<img src="{{ asset('assets/images/icons/' . $catInfo['img']) }}" alt="{{ $catInfo['label'] }}" class="nav-cat-icon">@else<i class="fas fa-hand"></i>@endif {{ $catInfo['label'] }} <i class="fas fa-chevron-right sub-arrow"></i></a>
                                 <div class="nav-sub-menu">
                                     @foreach(collect(config('services_data'))->where('category', $catKey) as $s)
                                         <a href="{{ route('service.detail', ['category' => $catKey, 'slug' => $s['slug']]) }}">{{ $s['title'] }}</a>
@@ -116,12 +116,12 @@
             <div class="footer-grid">
                 <div class="footer-about">
                     <a href="{{ route('home') }}" class="logo">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="MoveWell Orthopaedics" style="height:50px;filter:brightness(0) invert(1);">
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="MoveWell Orthopaedics" style="height:110px;width:auto;filter:brightness(0) invert(1);">
                     </a>
                     <p>MoveWell Orthopaedics is dedicated to providing advanced orthopaedic care with precision-driven surgical techniques and personalized rehabilitation plans.</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/movewellortho" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>

@@ -206,8 +206,8 @@ h4 {
 .top-bar {
     background: var(--secondary);
     color: var(--white);
-    padding: 5px 0;
-    font-size: 0.72rem;
+    padding: 7px 0;
+    font-size: 0.9rem;
 }
 
 .top-bar .container {
@@ -240,7 +240,7 @@ h4 {
 
 .top-bar-right a {
     color: rgba(255, 255, 255, 0.85);
-    font-size: 0.72rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -275,6 +275,13 @@ h4 {
     gap: 10px;
     flex-shrink: 0;
     white-space: nowrap;
+    margin-left: -30px;
+}
+
+@media (max-width: 992px) {
+    .logo {
+        margin-left: 0;
+    }
 }
 
 .logo img {
@@ -412,6 +419,14 @@ h4 {
 /* Nested Sub-Dropdown */
 .nav-sub-dropdown {
     position: relative;
+}
+
+.nav-cat-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 .nav-sub-dropdown > a {
@@ -1884,12 +1899,29 @@ h4 {
     align-items: center;
     justify-content: center;
     color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.footer-social a:nth-child(1) {
+    background: #1877f2;
+}
+
+.footer-social a:nth-child(2) {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.footer-social a:nth-child(3) {
+    background: #ff0000;
+}
+
+.footer-social a:nth-child(4) {
+    background: #0a66c2;
     transition: var(--transition);
 }
 
 .footer-social a:hover {
-    background: var(--primary);
     transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .footer h4 {

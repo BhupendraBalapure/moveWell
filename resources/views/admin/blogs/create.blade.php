@@ -31,7 +31,7 @@
                     </div>
                     <div class="mb-0">
                         <label class="form-label">Content *</label>
-                        <textarea name="content" class="form-control" rows="16" placeholder="Write your full article here..." required style="resize:vertical;line-height:1.8;">{{ old('content') }}</textarea>
+                        <textarea name="content" id="blogEditor" class="form-control" rows="16" placeholder="Write your full article here..." required style="resize:vertical;line-height:1.8;">{{ old('content') }}</textarea>
                     </div>
                 </div>
             </div>
@@ -82,6 +82,7 @@
 @endsection
 
 @section('scripts')
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
 <script>
 function previewBlog(input) {
     const preview = document.getElementById('blogPreview');
@@ -91,5 +92,11 @@ function previewBlog(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+ClassicEditor
+    .create(document.querySelector('#blogEditor'), {
+        toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'blockQuote', 'insertTable', 'undo', 'redo']
+    })
+    .catch(err => console.error(err));
 </script>
 @endsection
