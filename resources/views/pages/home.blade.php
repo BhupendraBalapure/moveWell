@@ -4,21 +4,8 @@
 
 @section('content')
 
-    <style>
-        .heroBg {
-            background: url('{{ asset('assets/images/movewell.png') }}') right center/cover no-repeat;
-        }
-
-
-        @media(max-width:765px) {
-            .heroBg {
-                background: url('{{ asset('assets/images/movewell.jpg') }}') right center/cover no-repeat;
-            }
-        }
-    </style>
-
     <!-- Hero Section -->
-    <section class="hero heroBg">
+    <section class="hero">
         <div class="container">
             <div class="hero-form">
                 <div class="hero-form-card">
@@ -82,6 +69,11 @@
                     <a href="https://wa.me/917892113380" target="_blank" class="btn btn-outline">
                         <i class="fab fa-whatsapp"></i> WhatsApp Consult
                     </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="{{ asset('assets/images/hero.jpg') }}" alt="Dr. Sahil Lala - Orthopaedic Surgeon">
                 </div>
             </div>
         </div>

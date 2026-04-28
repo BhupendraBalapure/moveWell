@@ -768,14 +768,13 @@ h4 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 65%;
+    width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(13, 59, 66, 0.92) 40%,
-        transparent
-    );
+    background:
+        radial-gradient(circle at 15% 30%, rgba(109, 213, 237, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 70%, rgba(13, 59, 66, 0.55) 0%, transparent 50%);
     z-index: 1;
+    pointer-events: none;
 }
 
 .hero::after {
@@ -811,17 +810,17 @@ h4 {
 .hero .container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 40px;
+    justify-content: space-between;
+    gap: 30px;
     position: relative;
     z-index: 2;
     max-width: 100%;
-    /* padding: 0 70px 0 0px; */
-    padding: 0 70px 0 40px;
+    padding: 0 50px;
 }
 
 .hero-content {
-    flex: 0 1 520px;
+    flex: 1 1 0;
+    min-width: 0;
     color: var(--white);
 }
 
@@ -845,6 +844,7 @@ h4 {
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 30px;
     line-height: 1.8;
+    max-width: 380px;
     animation: heroFadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
 }
 
@@ -856,9 +856,60 @@ h4 {
 }
 
 .hero-form {
-    flex: 0 0 420px;
+    flex: 0 0 380px;
     animation: heroFadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
 }
+
+/* Hero Doctor Image (Premium) */
+.hero-image {
+    flex: 0 0 340px;
+    position: relative;
+    animation: heroFadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, rgba(109, 213, 237, 0.25), rgba(13, 59, 66, 0.4));
+}
+
+.hero-image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 50%, var(--secondary) 100%);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(13, 59, 66, 0.55) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 
 .hero-form-card {
     background: var(--white);
@@ -2123,6 +2174,13 @@ h4 {
         justify-content: center;
     }
 
+    .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
     .hero-visual-circle {
         width: 300px;
         height: 300px;
@@ -2353,44 +2411,60 @@ h4 {
     }
 
     .hero {
-        min-height: 45vh;
-        padding: 15px 0;
+        min-height: auto;
+        padding: 25px 0 30px;
         align-items: center;
     }
 
     .hero::before {
         left: 0;
-        width: 50%;
-        background: linear-gradient(
-            to right,
-            rgba(13, 59, 66, 0.75),
-            transparent
-        );
+        width: 100%;
+        background:
+            radial-gradient(circle at 0% 50%, rgba(13, 59, 66, 0.55) 0%, transparent 65%);
     }
 
     .hero .container {
         flex-direction: row;
-        padding: 0 20px;
+        padding: 0 18px;
+        gap: 18px;
+        align-items: center;
     }
 
     .hero-content {
-        flex: 1;
+        flex: 1 1 0;
+        min-width: 0;
         text-align: left;
     }
 
+    .hero-image {
+        flex: 0 0 145px;
+        max-width: 145px;
+        margin: 0;
+    }
+
+    .hero-image-wrapper {
+        border-radius: 16px;
+    }
+
+    .hero-image-wrapper::before {
+        border-radius: 16px;
+        padding: 1.5px;
+    }
+
     .hero-content h1 {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-        letter-spacing: 1px;
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+        letter-spacing: 0.8px;
+        line-height: 1.3;
     }
 
     .hero-content p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         margin-bottom: 12px;
-        line-height: 1.6;
-        max-width: 65%;
+        line-height: 1.5;
+        max-width: 100%;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
@@ -2526,7 +2600,12 @@ h4 {
     }
 
     .hero-content h1 {
-        font-size: 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-content p {
+        font-size: 0.65rem;
+        line-height: 1.45;
     }
 
     .hero-buttons {
