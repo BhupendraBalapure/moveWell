@@ -874,7 +874,7 @@ h4 {
     box-shadow:
         0 25px 60px rgba(0, 0, 0, 0.45),
         0 0 0 1px rgba(255, 255, 255, 0.08) inset;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 5.5;
     background: linear-gradient(135deg, rgba(109, 213, 237, 0.25), rgba(13, 59, 66, 0.4));
 }
 
@@ -2444,11 +2444,18 @@ h4 {
 
     .hero-image-wrapper {
         border-radius: 16px;
+        aspect-ratio: auto;
+        background: transparent;
     }
 
     .hero-image-wrapper::before {
         border-radius: 16px;
         padding: 1.5px;
+    }
+
+    .hero-image-wrapper img {
+        height: auto;
+        object-fit: initial;
     }
 
     .hero-content h1 {

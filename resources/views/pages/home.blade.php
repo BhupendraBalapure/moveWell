@@ -63,7 +63,7 @@
             </div>
             <div class="hero-content">
                 <h1>Advanced<br><span>Orthopaedic</span><br>Care & <span>Treatment</span></h1>
-                <p>Dr. Sahil Lala — Fellowship-trained Orthopaedic Surgeon specializing in Arthroscopy, Sports Injury, Knee
+                <p>Dr. Sahil Lala, Fellowship-trained Orthopaedic Surgeon specializing in Arthroscopy, Sports Injury, Knee
                     & Shoulder Surgery. Precision-driven care for optimal recovery.</p>
                 <div class="hero-buttons">
                     <a href="https://wa.me/917892113380" target="_blank" class="btn btn-outline">
@@ -73,7 +73,10 @@
             </div>
             <div class="hero-image">
                 <div class="hero-image-wrapper">
-                    <img src="{{ asset('assets/images/hero.jpg') }}" alt="Dr. Sahil Lala - Orthopaedic Surgeon">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="{{ asset('assets/images/mobile.jpg') }}">
+                        <img src="{{ asset('assets/images/hero.jpg') }}" alt="Dr. Sahil Lala - Orthopaedic Surgeon">
+                    </picture>
                 </div>
             </div>
         </div>
